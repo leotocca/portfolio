@@ -1,7 +1,7 @@
 const tabs = document.querySelector(".tabs");
 const panels = document.querySelectorAll(".panel");
-const selectElement = element => document.querySelector(element);
-const selectAllElements = elements => document.querySelectorAll(elements);
+const selectElement = (element) => document.querySelector(element);
+const selectAllElements = (elements) => document.querySelectorAll(elements);
 
 function isMobile() {
   return document.body.clientWidth < 1024 ? true : false;
@@ -13,11 +13,11 @@ function isInHeader() {
 
 // Handles hamburger and brands color on click
 
-selectElement(".hamburger").addEventListener("click", function() {
+selectElement(".hamburger").addEventListener("click", function () {
   if (isInHeader() && isMobile()) {
     selectElement(".navbar-brand").classList.toggle("navbar-brand-onscroll");
     selectElement(".hamburger").classList.toggle("active");
-    selectAllElements(".hamburger .line").forEach(line =>
+    selectAllElements(".hamburger .line").forEach((line) =>
       line.classList.toggle("hamburger-line-onscroll")
     );
   } else {
@@ -29,12 +29,12 @@ selectElement(".hamburger").addEventListener("click", function() {
 
 // Widthdraws the white background on the menu on click on mobile
 
-selectElement(".nav-list").addEventListener("click", function(event) {
+selectElement(".nav-list").addEventListener("click", function (event) {
   if (event.target.tagName === "A" && isMobile() && isInHeader()) {
     event.target.parentElement.parentElement.classList.remove("active");
     selectElement(".hamburger").classList.remove("active");
     selectElement(".navbar-brand").classList.remove("navbar-brand-onscroll");
-    selectAllElements(".hamburger .line").forEach(line =>
+    selectAllElements(".hamburger .line").forEach((line) =>
       line.classList.remove("hamburger-line-onscroll")
     );
   } else if (event.target.tagName === "A" && isMobile()) {
@@ -48,10 +48,10 @@ selectElement(".nav-list").addEventListener("click", function(event) {
 function addColoredStyleToNavigation() {
   selectElement(".container").classList.add("nav-container-onscroll");
   selectElement(".navbar-brand").classList.add("navbar-brand-onscroll");
-  selectAllElements(".nav-link").forEach(link =>
+  selectAllElements(".nav-link").forEach((link) =>
     link.classList.add("nav-link-onscroll")
   );
-  selectAllElements(".hamburger .line").forEach(line =>
+  selectAllElements(".hamburger .line").forEach((line) =>
     line.classList.add("hamburger-line-onscroll")
   );
 }
@@ -59,17 +59,17 @@ function addColoredStyleToNavigation() {
 function removeColoredStyleToNavigation() {
   selectElement(".container").classList.remove("nav-container-onscroll");
   selectElement(".navbar-brand").classList.remove("navbar-brand-onscroll");
-  selectAllElements(".nav-link").forEach(link =>
+  selectAllElements(".nav-link").forEach((link) =>
     link.classList.remove("nav-link-onscroll")
   );
-  selectAllElements(".hamburger .line").forEach(line =>
+  selectAllElements(".hamburger .line").forEach((line) =>
     line.classList.remove("hamburger-line-onscroll")
   );
 }
 
 // Handles the nav main colors on scroll
 
-document.addEventListener("scroll", function(event) {
+document.addEventListener("scroll", function (event) {
   const isActive = [...selectElement(".nav-list").classList].includes("active");
 
   if (isMobile() && isInHeader() && isActive) {
@@ -83,22 +83,26 @@ document.addEventListener("scroll", function(event) {
   }
 });
 
-tabs.addEventListener("click", function(event) {
+// Handles the experience/studies toggle
+
+tabs.addEventListener("click", function (event) {
   if (event.target.tagName === "BUTTON") {
     const targetPanel = document.querySelector(event.target.dataset.target);
-    panels.forEach(panel => {
+    panels.forEach((panel) => {
       if (panel.id === targetPanel.id) {
-        panel.classList.add("active");
+        panel.classList.remove("hidden");
         const activeButton = document.getElementById(`${panel.id}Button`);
         activeButton.classList.add("activeButton");
       } else {
         const notActiveButton = document.getElementById(`${panel.id}Button`);
-        panel.classList.remove("active");
+        panel.classList.add("hidden");
         notActiveButton.classList.remove("activeButton");
       }
     });
   }
 });
+
+// Handles the typewriter effect
 
 document.addEventListener("DOMContentLoaded", init);
 
