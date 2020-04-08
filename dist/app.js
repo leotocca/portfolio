@@ -1,5 +1,3 @@
-const tabs = document.querySelector(".tabs");
-const panels = document.querySelectorAll(".panel");
 const selectElement = (element) => document.querySelector(element);
 const selectAllElements = (elements) => document.querySelectorAll(elements);
 
@@ -85,10 +83,10 @@ document.addEventListener("scroll", function (event) {
 
 // Handles the experience/studies toggle
 
-tabs.addEventListener("click", function (event) {
+selectElement(".tabs").addEventListener("click", function (event) {
   if (event.target.tagName === "BUTTON") {
-    const targetPanel = document.querySelector(event.target.dataset.target);
-    panels.forEach((panel) => {
+    const targetPanel = selectElement(event.target.dataset.target);
+    selectAllElements(".panels").forEach((panel) => {
       if (panel.id === targetPanel.id) {
         panel.classList.remove("hidden");
         const activeButton = document.getElementById(`${panel.id}Button`);
