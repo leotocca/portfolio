@@ -86,7 +86,7 @@ document.addEventListener("scroll", function (event) {
 selectElement(".tabs").addEventListener("click", function (event) {
   if (event.target.tagName === "BUTTON") {
     const targetPanel = selectElement(event.target.dataset.target);
-    selectAllElements(".panels").forEach((panel) => {
+    selectAllElements(".panel").forEach((panel) => {
       if (panel.id === targetPanel.id) {
         panel.classList.remove("hidden");
         const activeButton = document.getElementById(`${panel.id}Button`);
