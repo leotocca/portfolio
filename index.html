@@ -57,7 +57,7 @@
       </div>
       <div id="home" class="flex items-center h-full">
         <div
-          class="px-10 pt-20 lg:pt-32 pb-12 max-w-md mx-auto sm:max-w-xl lg:max-w-full lg:w-1/2 lg:py-24 lg:px-12"
+          class="px-10 pt-16 lg:pt-32 pb-12 max-w-md mx-auto sm:max-w-xl lg:max-w-full lg:w-1/2 lg:py-24 lg:px-12"
         >
           <h1
             class="text-3xl sm:text-4xl xl:text-5xl font-semibold text-white leading-tight text-center"
@@ -104,7 +104,7 @@
           Here are some of the projects I've done so far. This list will
           continue growing as
           <span class="text-green-500 font-semibold"
-            >I am currently learning React</span
+            >I am currently learning React.</span
           >
         </p>
       </div>
@@ -114,7 +114,9 @@
       >
         <!-- First project -->
 
-        <div class="lg:w-5/12 sm:w-5/12 py-8 mx-4 md:mx-1">
+        <div
+          class="lg:w-5/12 sm:w-5/12 py-8 mx-4 md:mx-1 text-center lg:text-left"
+        >
           <div
             class="mx-2 shadow-md relative bg-white rounded-md hover:bg-gray-200"
           >
@@ -165,7 +167,9 @@
 
         <!-- Second project -->
 
-        <div class="lg:w-5/12 sm:w-5/12 py-8 mx-4 md:mx-1">
+        <div
+          class="lg:w-5/12 sm:w-5/12 py-8 mx-4 md:mx-1 text-center lg:text-left"
+        >
           <div
             class="mx-2 shadow-md relative bg-white rounded-md hover:bg-gray-200"
           >
@@ -181,7 +185,12 @@
                   >The Movie Database API</a
                 >
                 and serves it's best 100 movies. It supports CRUD operations and
-                the db has been done with lowdb.
+                the db has been done with
+                <a
+                  class="text-blue-600"
+                  href="https://github.com/typicode/lowdb"
+                  >lowdb</a
+                >.
               </div>
             </div>
             <div class="px-6">
@@ -224,7 +233,9 @@
 
         <!-- Third project -->
 
-        <div class="lg:w-5/12 sm:w-5/12 py-8 mx-4 md:mx-1">
+        <div
+          class="lg:w-5/12 sm:w-5/12 py-8 mx-4 md:mx-1 text-center lg:text-left"
+        >
           <div
             class="mx-2 shadow-md relative bg-white rounded-md hover:bg-gray-200"
           >
@@ -266,7 +277,9 @@
 
         <!-- Forth project -->
 
-        <div class="lg:w-5/12 sm:w-5/12 py-8 mx-4 md:mx-1">
+        <div
+          class="lg:w-5/12 sm:w-5/12 py-8 mx-4 md:mx-1 text-center lg:text-left"
+        >
           <div
             class="mx-2 shadow-md relative bg-white rounded-md hover:bg-gray-200"
           >
@@ -311,7 +324,9 @@
 
         <!-- Fifth project -->
 
-        <div class="lg:w-5/12 sm:w-5/12 py-8 mx-4 md:mx-1">
+        <div
+          class="lg:w-5/12 sm:w-5/12 py-8 mx-4 md:mx-1 text-center lg:text-left"
+        >
           <div
             class="mx-2 shadow-md relative bg-white rounded-md hover:bg-gray-200"
           >
@@ -367,7 +382,9 @@
 
         <!-- Sixth project -->
 
-        <div class="lg:w-5/12 sm:w-5/12 py-8 mx-4 md:mx-1">
+        <div
+          class="lg:w-5/12 sm:w-5/12 py-8 mx-4 md:mx-1 text-center lg:text-left"
+        >
           <div
             class="mx-2 shadow-md relative bg-white rounded-md hover:bg-gray-200"
           >
@@ -861,6 +878,7 @@
                   id="grid-first-name"
                   type="text"
                   placeholder="First name"
+                  required
                 />
               </div>
               <div class="w-full md:w-1/2 px-3">
@@ -874,6 +892,7 @@
                   id="grid-last-name"
                   type="text"
                   placeholder="Last name"
+                  required
                 />
               </div>
             </div>
@@ -889,6 +908,7 @@
                   id="grid-password"
                   type="email"
                   placeholder="Email"
+                  required
                 />
               </div>
             </div>
@@ -903,6 +923,7 @@
                 name="message"
                 id="grid-city"
                 placeholder="Message"
+                required
               ></textarea>
             </div>
             <div class="md:flex md:items-center">
@@ -953,8 +974,8 @@
             class="font-semibold hover:text-green-400"
             href="https://github.com/leotocca/portfolio"
             >handcrafted by me</a
-          >
-          and done with love and
+          ><span class="hidden lg:inline-block">.</span>
+          <br class="lg:hidden" />Done with love and
           <a
             class="font-semibold hover:text-green-400"
             href="https://tailwindcss.com/"
